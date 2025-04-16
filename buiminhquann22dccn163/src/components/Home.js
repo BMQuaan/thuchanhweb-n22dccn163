@@ -8,9 +8,10 @@ const Home = () => {
     description: '',
     price: ''
   });
+  const [editingId, setEditingId] = useState(null); // <== đang sửa sản phẩm nào?
 
   const fetchProducts = () => {
-    fetch('http://localhost:5000/api/products')
+    fetch('http://localhost:5000/products')
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error('Lỗi khi tải sản phẩm:', err));
@@ -28,17 +29,61 @@ const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:5000/api/products', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form)
-    })
-      .then(res => res.json())
-      .then(newProduct => {
-        setProducts(prev => [...prev, newProduct]); 
-        setForm({ name: '', description: '', price: '' });
+    if (editingId) {
+      // === Cập nhật sản phẩm ===
+      fetch(`http://localhost:5000/products/${editingId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
       })
-      .catch(err => console.error('Lỗi khi thêm sản phẩm:', err));
+        .then(res => res.json())
+        .then(() => {
+          setProducts(prev =>
+            prev.map(p => (p.id === editingId ? { ...p, ...form } : p))
+          );
+          setForm({ name: '', description: '', price: '' });
+          setEditingId(null);
+        })
+        .catch(err => console.error('Lỗi cập nhật:', err));
+    } else {
+      // === Thêm sản phẩm ===
+      fetch('http://localhost:5000/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      })
+        .then(res => res.json())
+        .then(response => {
+          if (response.productId) {
+            const newProduct = { id: response.productId, ...form };
+            setProducts(prev => [...prev, newProduct]);
+            setForm({ name: '', description: '', price: '' });
+          }
+        })
+        .catch(err => console.error('Lỗi khi thêm sản phẩm:', err));
+    }
+  };
+
+  const handleEdit = (product) => {
+    setForm({
+      name: product.name,
+      description: product.description,
+      price: product.price
+    });
+    setEditingId(product.id);
+  };
+
+  const handleDelete = (id) => {
+    if (window.confirm('Bạn chắc chắn muốn xoá sản phẩm này?')) {
+      fetch(`http://localhost:5000/products/${id}`, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(() => {
+          setProducts(prev => prev.filter(p => p.id !== id));
+        })
+        .catch(err => console.error('Lỗi khi xoá sản phẩm:', err));
+    }
   };
 
   return (
@@ -46,7 +91,7 @@ const Home = () => {
       <h1>Trang Chủ</h1>
 
       <form onSubmit={handleSubmit} style={{ marginBottom: '40px', maxWidth: '400px' }}>
-        <h2>Thêm sản phẩm mới</h2>
+        <h2>{editingId ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'}</h2>
         <div>
           <input
             type="text"
@@ -76,10 +121,26 @@ const Home = () => {
             required
           />
         </div>
-        <button type="submit">Thêm sản phẩm</button>
+        <button type="submit">{editingId ? 'Cập nhật' : 'Thêm sản phẩm'}</button>
+        {editingId && (
+          <button
+            type="button"
+            onClick={() => {
+              setEditingId(null);
+              setForm({ name: '', description: '', price: '' });
+            }}
+            style={{ marginLeft: '10px' }}
+          >
+            Huỷ
+          </button>
+        )}
       </form>
 
-      <ProductList products={products} />
+      <ProductList
+        products={products}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+      />
     </div>
   );
 };
