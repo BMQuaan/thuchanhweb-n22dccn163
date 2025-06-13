@@ -111,14 +111,11 @@ Project sẵn sàng để deploy trên các nền tảng:
 
 ---
 
-## 📚 Giấy phép
+## 👥 Nhóm Thực Hiện
+- Nguyễn Ngọc Long - N22DCCN149
+- Bùi Kinh Luân - N22DCCN151
+- Bùi Minh Quân - N22DCCN163
 
-Dự án theo MIT License
-
----
-
-## 🤝 Tác giả
-
-* [BMQuaan - GitHub](https://github.com/BMQuaan)
-
+## 📄 License
+Dự án được thực hiện với mục đích học tập
 > Vui lòng sao chép README này khi forking hoặc triển khai!
