@@ -34,9 +34,21 @@ npm install
 Tạo file `.env`:
 
 ```env
-PORT=5000
-MONGO_URI=<MongoDB connection>
-JWT_SECRET=<your_secret_key>
+PORT=3000
+MONGO_URL=mongodb+srv://greenmart:Greenmart123@greenmart.wnccwvo.mongodb.net/GreenMart?retryWrites=true&w=majority&appName=GreenMart
+
+JWT_SECRET=182865cbe7b41daf860ce70519348a829091e65ede99cc11e07975fc219ff642
+JWT_REFRESH_SECRET=05ff799218f7e768826c84a85acbbab1ec1334bc3e67cfb7a49965d133c5df77
+JWT_EXPIRES_IN=7d
+
+CLOUDINARY_CLOUD_NAME=daphfcudn
+CLOUDINARY_API_KEY=612411374265656
+CLOUDINARY_API_SECRET=h5Qc9CYvlJf-5GTje6IGiQ24zNA
+
+EMAIL_USER=greenmart.project@gmail.com
+EMAIL_PASS=pxsf uqzy hvzh outu
+
+GOOGLE_CLIENT_ID=1054005180024-cv0rvp5sv4ohjqfk5o85au4j129hmsuc.apps.googleusercontent.com
 ```
 
 Khởi động:
