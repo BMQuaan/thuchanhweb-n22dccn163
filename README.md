@@ -51,7 +51,7 @@ EMAIL_PASS=pxsf uqzy hvzh outu
 GOOGLE_CLIENT_ID=1054005180024-cv0rvp5sv4ohjqfk5o85au4j129hmsuc.apps.googleusercontent.com
 ```
 
-Khởi động:
+Khởi chạy dự án:
 
 ```bash
 npm start       # Production
