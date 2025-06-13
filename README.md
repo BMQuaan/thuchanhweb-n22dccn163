@@ -3,17 +3,6 @@
 **GreenMart Backend** là server API cho một ứng dụng thương mại điện tử. Dự án cung cấp các chức năng cơ bản như quản lý người dùng, sản phẩm, đơn hàng, và giỏ hàng.
 
 ---
-
-## ✅ Tính năng
-
-* ✔️ Xác thực JWT (người dùng / admin)
-* ✔️ CRUD sản phẩm
-* ✔️ Quản lý giỏ hàng và đơn hàng
-* ✔️ Phân quyền admin / user
-* ✔️ Tìm kiếm, lọc, phân trang API
-
----
-
 ## ⚙️ Công nghệ
 
 * Node.js + Express
