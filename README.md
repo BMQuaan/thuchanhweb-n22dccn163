@@ -1,4 +1,4 @@
-# 🟢 GreenMart Backend
+# 🟢 Backend - Website Siêu thị trực tuyến GreenMart
 
 **GreenMart Backend** là server API cho một ứng dụng thương mại điện tử. Dự án cung cấp các chức năng cơ bản như quản lý người dùng, sản phẩm, đơn hàng, và giỏ hàng.
 
@@ -54,7 +54,6 @@ GOOGLE_CLIENT_ID=1054005180024-cv0rvp5sv4ohjqfk5o85au4j129hmsuc.apps.googleuserc
 Khởi động:
 
 ```bash
-npm run dev     # Chạy với nodemon
 npm start       # Production
 ```
 
@@ -63,13 +62,25 @@ npm start       # Production
 ## 📂 Cấu trúc thư mục
 
 ```
-src/
-├── controllers/     # Logic xử lý API
-├── models/          # Các schema / ORM
-├── routes/          # Định tuyến API
-├── middlewares/     # Auth, logger, error handler
-├── utils/           # Tiện ích
-└── server.js        # Entry point
+api\v1
+├── controllers/      # Xử lý nghiệp vụ API
+├── middlewares/      # Xác thực, kiểm lỗi, logger
+├── models/           # Mongoose schemas
+├── routes/           # Định nghĩa route
+├── validations/      # Kiểm tra đầu vào (Joi,...)
+>
+config/               # Cấu hình kết nối (DB, env...)
+dist/                 # Thư mục build
+helper/               # Hàm tiện ích
+node_modules/         # Thư viện npm
+>
+.env                  # Biến môi trường
+.gitignore
+index.ts              # Điểm khởi chạy app
+package-lock.json
+package.json
+README.md
+tsconfig.json         # Cấu hình TypeScript
 ```
 
 ---
