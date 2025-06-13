@@ -83,34 +83,6 @@ tsconfig.json         # Cấu hình TypeScript
 
 ---
 
-## 📓 API Tiêu biểu
-
-| Phương thức | Đường dẫn            | Mô tả                     |
-| ----------- | -------------------- | ------------------------- |
-| POST        | `/api/auth/register` | Đăng ký                   |
-| POST        | `/api/auth/login`    | Đăng nhập                 |
-| GET         | `/api/products`      | Danh sách sản phẩm        |
-| POST        | `/api/products`      | Tạo sản phẩm (admin)      |
-| PUT         | `/api/products/:id`  | Cập nhật sản phẩm         |
-| DELETE      | `/api/products/:id`  | Xóa sản phẩm              |
-| GET         | `/api/cart`          | Lấy giỏ hàng user         |
-| POST        | `/api/cart`          | Thêm vào giỏ hàng         |
-| DELETE      | `/api/cart/:itemId`  | Xóa khỏi giỏ hàng         |
-| POST        | `/api/orders`        | Tạo đơn hàng              |
-| GET         | `/api/orders`        | Xem đơn hàng (user/admin) |
-
----
-
-## 🚀 Triển khai
-
-Project sẵn sàng để deploy trên các nền tảng:
-
-* Render / Vercel (kết hợp frontend)
-* Docker
-* CI/CD qua GitHub Actions
-
----
-
 ## 👥 Nhóm Thực Hiện
 - Nguyễn Ngọc Long - N22DCCN149
 - Bùi Kinh Luân - N22DCCN151
