@@ -108,4 +108,3 @@ tsconfig.json         # Cấu hình TypeScript
 
 ## 📄 License
 Dự án được thực hiện với mục đích học tập
-> Vui lòng sao chép README này khi forking hoặc triển khai!
