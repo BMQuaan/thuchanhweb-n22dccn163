@@ -5,10 +5,40 @@
 ---
 ## ⚙️ Công nghệ
 
-* Node.js + Express
-* MongoDB (Mongoose)
-* JSON Web Token (JWT)
-* Dotenv, CORS, Helmet
+## ⚙️ Công nghệ
+
+### Ngôn ngữ & Môi trường
+
+* **TypeScript** + Node.js (Express)
+* **ES Modules**, hỗ trợ phát triển với `ts-node` và `nodemon`
+
+### Cơ sở dữ liệu
+
+* MongoDB với **Mongoose ORM**
+* Slug hóa bằng `mongoose-slug-updater`
+
+### Xác thực & Bảo mật
+
+* **JWT (jsonwebtoken)** cho xác thực token
+* **bcrypt** để mã hóa mật khẩu
+* **cookie-parser** để đọc cookies
+* **dotenv** để quản lý biến môi trường
+
+### Middleware & Tiện ích
+
+* **CORS**, **body-parser**, **multer** (upload file)
+* **Zod** để validate dữ liệu đầu vào
+
+### Email & Cloud
+
+* **nodemailer** (gửi mail)
+* **cloudinary** (upload ảnh)
+
+### Khác
+
+* Google OAuth (`google-auth-library`)
+* **Slugify**, **md5** hỗ trợ xử lý chuỗi
+
 
 ---
 
