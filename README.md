@@ -67,13 +67,11 @@ api\v1
 ├── middlewares/      # Xác thực, kiểm lỗi, logger
 ├── models/           # Mongoose schemas
 ├── routes/           # Định nghĩa route
-├── validations/      # Kiểm tra đầu vào (Joi,...)
->
-config/               # Cấu hình kết nối (DB, env...)
+├── validations/      # Kiểm tra đầu vào 
+config/               # Cấu hình kết nối 
 dist/                 # Thư mục build
 helper/               # Hàm tiện ích
 node_modules/         # Thư viện npm
->
 .env                  # Biến môi trường
 .gitignore
 index.ts              # Điểm khởi chạy app
