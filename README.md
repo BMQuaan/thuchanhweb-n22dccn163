@@ -1,6 +1,6 @@
 # 🟢 Backend - Website Siêu thị trực tuyến GreenMart
 
-**GreenMart Backend** là server API cho một ứng dụng thương mại điện tử. Dự án cung cấp các chức năng cơ bản như quản lý người dùng, sản phẩm, đơn hàng, và giỏ hàng.
+**GreenMart Backend** là hệ thống API phục vụ cho **Website Siêu thị trực tuyến GreenMart** — một nền tảng thương mại điện tử chuyên về bán lẻ. Dự án được xây dựng bằng **Node.js** và **TypeScript**, cung cấp các tính năng.
 
 ---
 
@@ -80,23 +80,26 @@ npm start       # Production
 ## 📂 Cấu trúc thư mục
 
 ```
-api\v1
-├── controllers/      # Xử lý nghiệp vụ API
-├── middlewares/      # Xác thực, kiểm lỗi, logger
-├── models/           # Mongoose schemas
-├── routes/           # Định nghĩa route
-├── validations/      # Kiểm tra đầu vào 
-config/               # Cấu hình kết nối 
-dist/                 # Thư mục build
-helper/               # Hàm tiện ích
-node_modules/         # Thư viện npm
-.env                  # Biến môi trường
-.gitignore
-index.ts              # Điểm khởi chạy app
-package-lock.json
-package.json
-README.md
-tsconfig.json         # Cấu hình TypeScript
+greebnart-backend/
+├── api/v1/
+│   ├── controllers/      # Xử lý nghiệp vụ API
+│   ├── middlewares/      # Xác thực, kiểm lỗi, logger
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # Định nghĩa route
+│   ├── validations/      # Kiểm tra dữ liệu đầu vào
+│
+├── config/               # Cấu hình kết nối (DB, env...)
+├── dist/                 # Thư mục build sau khi biên dịch
+├── helper/               # Hàm tiện ích dùng chung
+├── node_modules/         # Thư viện phụ thuộc
+│
+├── .env                  # Biến môi trường
+├── .gitignore
+├── index.ts              # Điểm khởi chạy chính
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.json         # Cấu hình TypeScript
 ```
 
 ---
